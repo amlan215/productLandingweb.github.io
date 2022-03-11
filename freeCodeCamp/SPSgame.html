@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPS</title>
+</head>
+<body>
+   <h2><i>STONE--PAPER--SEASOR</i></h2>  
+</body>
+<script>
+    function SPS(move) {
+        var stoneAndpaper=1;
+        var stoneAndseasor=2;
+        var seasorAndpaper=3;
+        var bothsame=4;
+        var answer="";
+        
+        switch(move){
+            case 1:
+            answer = "paper wins";
+            return answer;
+            break;
+
+            case 2:
+            answer = "stone wins";
+            return answer;
+            break;
+
+            case 3:
+            answer="seasor wins";
+            return answer;
+            break;
+
+            default:
+            return "draw";
+        }
+    }
+    console.log(SPS(4));
+</script>
+</html>

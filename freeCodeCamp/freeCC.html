@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeCodeCamp</title>
+</head>
+
+<body>
+    <script>
+        console.log("Hello World");
+        var myarray = [20, 30, 40];
+        myarray[0] = 50;
+        var mydata = myarray[0];
+        console.log(mydata);
+        var yourarray = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [[10, 11, 12], 13, 14]];
+        var yourdata = yourarray[3][0][2];
+        console.log(yourdata);
+        var add = ["baba", "maa"];
+        add.push("bhai");
+        console.log(add);
+        var element = ["ayush", "ram"];
+        var remove = element.pop();
+        console.log(element);
+        var interchange = ["statha", "omm", "tubai"];
+        interchange.shift();
+        interchange.unshift("bubai");
+        console.log(interchange);
+
+
+        var ourbio = ["amlan", 26];
+        console.log(ourbio);
+
+        function timesfive(num) {
+
+            return num * 5;
+
+        }
+        console.log(timesfive(5));
+
+        function nextinline(arr, item) {
+            arr.push(item);
+
+            return arr.shift();
+        }
+        var testarr = [1, 2, 3, 4, 5];
+        console.log("before:" + JSON.stringify(testarr));
+        console.log(nextinline(testarr, 6));
+        console.log("after:" + JSON.stringify(testarr));
+
+        function boolean() {
+            return false;
+
+        }
+        console.log(boolean());
+        var a = 5;
+        var b = 6;
+        var c = 15;
+        function isittrue(value) {
+            if (a != c) {
+                return "yes,its true";
+            }
+            return "no, its not true";
+        }
+        console.log(isittrue());
+
+        function abTest(a, b) {
+            if (a < 0 || b < 0) {
+                return undefined;
+            }
+            return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b),2));
+        }
+        console.log(abTest(2, 2));
+
+        var count = 0;
+        function cc(card) {
+            switch(card)
+            {
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    count++;
+                    break;
+                case 10:
+                case "j":
+                case "Q":
+                case "K":
+                case "A":
+                    count--;
+                    break;
+
+            }
+            var holdbet='hold';
+            if(count > 0){
+                holdbet = 'bet';
+            }
+            return count + " " + holdbet;
+        }
+        cc(2); cc('k'); cc(10); cc('k'); cc('A');
+        console.log(cc(4));
+
+        var myobj = {
+            gift: "pony" ,
+            pot: "kitten",
+            bed: "sleigh"
+
+        };
+        function checkobj(checkprop) {
+            if(myobj.hasOwnProperty(checkprop))
+            {
+                return myobj[checkprop];
+            }
+            else
+            {
+                return "Not found";
+            }
+        } 
+        console.log(checkobj("pot"));
+
+        var myplants = [
+            {
+            type: "flowers",
+            list: [
+                "rose", "tulip", "dandelion"
+            ]
+        },
+        {
+            type: "trees",
+            list: [
+                "fir", "pine", "birch"
+            ]
+        }
+        ];
+
+        var secondtree = myplants[1].list[1];
+        console.log(secondtree);
+
+        var collection = {
+            "2548": {
+                "album":"slippery when wet",
+                "artist": "bon jovi",
+                "tracks": [
+                    "let it rock",
+                    "you give love a bad name"
+                ]
+            },
+            "2468": {
+                "album":"1999",
+                "artist": "prince",
+                "tracks": [
+                    "1999",
+                    "little red corvette"
+                ]
+            },
+            "1245": {
+                
+                "artist": "robert palmer",
+                "tracks": [ ]
+                
+            },
+            "5439": {
+                "album":"ABBA gold"
+                
+            }
+        };
+        var collectioncopy = JSON.stringify(collection);
+
+        function updaterecords(id,prop,value) {
+            if(value === ""){
+                delete collection[id][prop];
+            }
+            else if(prop === "tracks"){
+                collection[id][prop] = collection[id][prop] || [];
+                collection[id][prop].push(value);
+            }
+            else{
+                 collection[id][prop] = value;
+            }
+            return collection;
+        }
+        console.log(updaterecords(5439,"artist","ABBA"));
+        
+        var ourarray = [9,10,1,12];
+        var ourtotal = 0;
+      
+        for( var i=0; i<ourarray.length; i++)
+        {
+            ourtotal += ourarray[i];
+        }
+        console.log(ourtotal);
+        //nested for loops
+        function multiply(arr) {
+            var product=1;
+            for(var i=0; i<arr.length ; i++)
+            {
+                for(var j=0; j<arr[i].length; j++)
+                {
+                    product *= arr[i][j];
+                }
+            }
+            return product;
+
+        }
+        var product = multiply([[1,2],[3,4],[5,6,7]]);
+        console.log(product);
+
+        var random = Math.floor(Math.random()* 20);
+        function randomwhole() 
+        {
+         return Math.floor(Math.random()*10);  
+        }
+        console.log(randomwhole());
+    </script>
+</body>
+
+</html>
